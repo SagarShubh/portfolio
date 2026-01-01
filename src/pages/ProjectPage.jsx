@@ -35,7 +35,7 @@ const ProjectPage = () => {
     }
 
     return (
-        <div className="min-h-screen bg-primary text-primary">
+        <div className="min-h-screen bg-primary text-white">
             <Navbar />
 
             <main className="pt-32 pb-20">
