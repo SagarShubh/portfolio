@@ -1,6 +1,21 @@
 
 import React from 'react';
+import { Palette, Target, Layout, Fingerprint, Layers, PenTool, Film, Package } from 'lucide-react';
 import Navbar from '../components/Navbar';
+
+const SkillIcon = ({ name }) => {
+    const icons = {
+        Palette: <Palette size={20} />,
+        Target: <Target size={20} />,
+        Layout: <Layout size={20} />,
+        Fingerprint: <Fingerprint size={20} />,
+        Layers: <Layers size={20} />,
+        PenTool: <PenTool size={20} />,
+        Film: <Film size={20} />,
+        Package: <Package size={20} />
+    };
+    return icons[name] || null;
+};
 import Hero from '../components/Hero';
 import PortfolioSection from '../components/PortfolioSection';
 import Contact from '../components/Contact';
@@ -44,13 +59,29 @@ function Home() {
                             </div>
                         </div>
 
-                        <div className="order-1 md:order-2 bg-black/20 p-8 md:p-12 rounded-sm border border-white/5 backdrop-blur-sm">
+                        <div className="order-1 md:order-2">
                             <h3 className="text-xs uppercase tracking-[0.3em] text-accent mb-8 border-b border-white/10 pb-4">Technical Arsenal</h3>
-                            <div className="grid grid-cols-2 gap-x-4 gap-y-6">
-                                {['Creative Direction', 'Brand Strategy', 'UI/UX Design', 'Visual Identity', 'Adobe Suite', 'Figma', 'Motion Design', 'Print & Packaging'].map(skill => (
-                                    <div key={skill} className="flex items-center gap-3 group">
-                                        <span className="w-1.5 h-1.5 bg-white/20 rounded-full group-hover:bg-accent transition-colors" />
-                                        <span className="uppercase text-xs font-bold tracking-wider text-secondary group-hover:text-white transition-colors">{skill}</span>
+                            <div className="grid grid-cols-2 gap-4">
+                                {[
+                                    { name: 'Creative Direction', icon: 'Palette' },
+                                    { name: 'Brand Strategy', icon: 'Target' },
+                                    { name: 'UI/UX Design', icon: 'Layout' },
+                                    { name: 'Visual Identity', icon: 'Fingerprint' },
+                                    { name: 'Adobe Suite', icon: 'Layers' },
+                                    { name: 'Figma', icon: 'PenTool' },
+                                    { name: 'Motion Design', icon: 'Film' },
+                                    { name: 'Print & Packaging', icon: 'Package' }
+                                ].map((skill, idx) => (
+                                    <div key={idx} className="group bg-white/5 hover:bg-white/10 border border-white/5 rounded-sm p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <div className="text-accent opacity-70 group-hover:opacity-100 transition-opacity">
+                                                {/* Requires dynamic icon loading or pre-defined Import */}
+                                                {/* For now we use a generic placeholder or dynamic lookup if we import them */}
+                                                <SkillIcon name={skill.icon} />
+                                            </div>
+                                            <span className="text-[10px] text-white/30 font-mono">0{idx + 1}</span>
+                                        </div>
+                                        <h4 className="text-xs font-bold uppercase tracking-wider text-secondary group-hover:text-white transition-colors">{skill.name}</h4>
                                     </div>
                                 ))}
                             </div>
