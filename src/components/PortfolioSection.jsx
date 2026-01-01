@@ -46,15 +46,17 @@ const PortfolioSection = () => {
                 <h2 className="text-4xl md:text-6xl font-bold mb-12 uppercase">Selected Work</h2>
 
                 {/* Categories Filter - Horizontal Scroll */}
-                <div className="flex gap-4 overflow-x-auto pb-8 mb-8 no-scrollbar touch-pan-x">
+                {/* Categories Filter - Horizontal Scroll */}
+                <div className="flex gap-3 overflow-x-auto pb-8 mb-12 no-scrollbar touch-pan-x items-center">
+                    <span className="text-secondary text-xs uppercase tracking-widest mr-4 hidden md:block">Filter By:</span>
                     {categories.map(cat => (
                         <button
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
-                            className={`whitespace-nowrap px-6 py-2 rounded-full border transition-all uppercase text-sm tracking-wider
+                            className={`whitespace-nowrap px-6 py-3 rounded-sm border transition-all uppercase text-xs font-bold tracking-widest
                                 ${activeCategory === cat
-                                    ? 'bg-white text-black border-white'
-                                    : 'bg-transparent text-secondary border-secondary/30 hover:border-white hover:text-white'}`}
+                                    ? 'bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.3)]'
+                                    : 'bg-transparent text-secondary border-white/10 hover:border-white hover:text-white'}`}
                         >
                             {cat}
                         </button>

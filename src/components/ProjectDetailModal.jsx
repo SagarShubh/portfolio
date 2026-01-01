@@ -12,7 +12,7 @@ const ProjectDetailModal = ({ project, onClose, onNext, onPrev }) => {
     }, []);
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-lg">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-lg">
             <button
                 onClick={onClose}
                 className="absolute top-6 right-6 text-white hover:text-accent z-50 p-2 bg-black/50 rounded-full"
