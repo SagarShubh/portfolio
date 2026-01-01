@@ -1,13 +1,33 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import PortfolioSection from './components/PortfolioSection';
 import Contact from './components/Contact';
 
 function App() {
+  /* Scrollbar */
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      // Cleanup if necessary
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-primary text-primary selection:bg-accent selection:text-black">
+      {/* Cinematic Noise Overlay */}
+      <div className="fixed inset-0 z-50 pointer-events-none opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+
       <Navbar />
       <Hero />
 

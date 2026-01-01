@@ -67,7 +67,7 @@ const PortfolioSection = () => {
                         <div
                             key={`${project.id}-${idx}`}
                             onClick={() => setSelectedProject(project)}
-                            className="group cursor-pointer"
+                            className="group cursor-pointer project-card"
                         >
                             <div className="aspect-[4/3] bg-black/50 overflow-hidden rounded-lg mb-4 relative">
                                 {project.images && project.images.length > 0 ? (
