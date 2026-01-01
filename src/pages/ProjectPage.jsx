@@ -38,9 +38,9 @@ const ProjectPage = () => {
         <div className="min-h-screen bg-primary text-white">
             <Navbar />
 
-            <main className="pt-32 pb-20">
+            <main className="pt-48 pb-20">
                 <div className="container max-w-5xl mx-auto px-4">
-                    <Link to="/" className="inline-flex items-center text-white/60 hover:text-white mb-8 transition-colors uppercase text-xs tracking-widest z-10 relative">
+                    <Link to="/" className="inline-flex items-center text-white/80 hover:text-accent mb-8 transition-colors uppercase text-xs tracking-widest z-10 relative">
                         <ArrowLeft size={16} className="mr-2" /> Back to Portfolio
                     </Link>
 
