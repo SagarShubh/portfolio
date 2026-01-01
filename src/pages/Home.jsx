@@ -15,31 +15,42 @@ function Home() {
                 <PortfolioSection />
 
                 {/* About Section */}
-                <section id="about" className="py-20 md:py-32 bg-secondary/50">
-                    <div className="container grid md:grid-cols-2 gap-16 items-center">
-                        <div className="order-2 md:order-1">
-                            <h2 className="text-4xl md:text-6xl font-bold mb-8 uppercase leading-tight">Beyond The <br /> <span className="text-accent">Pixels</span></h2>
-                            <p className="text-secondary text-lg leading-relaxed mb-6">
-                                I'm <strong>Sagar Vaishnava</strong>, but my clients call me their secret weapon.
-                                In a world of template designs, I craft bespoke visual identities that command attention.
-                            </p>
-                            <p className="text-secondary text-lg leading-relaxed mb-8">
-                                With a relentlessly high standard for aesthetics and a deep understanding of user psychology,
-                                I don't just "make things look good"—I build systems that drive growth.
-                                Startups trust me to launch. Enterprises trust me to scale.
-                            </p>
+                <section id="about" className="py-24 md:py-40 bg-secondary/30 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-                            <a href="https://www.behance.net/sagar942504106" target="_blank" rel="noopener noreferrer" className="inline-block border-b border-accent text-accent pb-1 uppercase tracking-wider text-sm hover:text-white hover:border-white transition-colors">
-                                View Full Portfolio on Behance &rarr;
-                            </a>
+                    <div className="container grid md:grid-cols-2 gap-20 items-start">
+                        <div className="order-2 md:order-1 relative">
+                            <h2 className="text-5xl md:text-7xl font-bold mb-10 uppercase leading-[0.9]">
+                                Beyond <br /> <span className="text-accent">The Pixels</span>
+                            </h2>
+
+                            <div className="space-y-6 text-lg md:text-xl text-secondary font-light leading-relaxed">
+                                <p>
+                                    I'm <strong>Sagar Vaishnava</strong>. My philosophy is simple: Average is invisible.
+                                </p>
+                                <p>
+                                    In a saturated digital landscape, I act as a strategic partner to brands that refuse to blend in.
+                                    I combine <span className="text-white font-normal">psychology-driven design</span> with high-end aesthetics to build systems that scale.
+                                </p>
+                                <p>
+                                    Whether it's a startup launch or an enterprise rebrand, I don't just deliver files—I deliver impact.
+                                </p>
+                            </div>
+
+                            <div className="mt-12">
+                                <a href="https://www.behance.net/sagar942504106" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-b border-white/30 text-white pb-1 uppercase tracking-widest text-xs hover:border-accent hover:text-accent transition-colors group">
+                                    Explore Full Visual Archive <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                                </a>
+                            </div>
                         </div>
 
-                        <div className="order-1 md:order-2">
-                            <h3 className="text-xl uppercase tracking-widest text-white/50 mb-6 border-b border-white/10 pb-2">Technical Arsenal</h3>
-                            <div className="grid grid-cols-2 gap-4">
-                                {['Adobe Photoshop', 'Adobe Illustrator', 'Adobe InDesign', 'Figma (UI/UX)', 'After Effects', 'Premiere Pro', 'Core Branding', 'Visual Strategy'].map(skill => (
-                                    <div key={skill} className="bg-white/5 border border-white/10 p-4 rounded-sm text-center uppercase text-xs font-bold tracking-widest hover:bg-white hover:text-black hover:border-white transition-all duration-300 cursor-default">
-                                        {skill}
+                        <div className="order-1 md:order-2 bg-black/20 p-8 md:p-12 rounded-sm border border-white/5 backdrop-blur-sm">
+                            <h3 className="text-xs uppercase tracking-[0.3em] text-accent mb-8 border-b border-white/10 pb-4">Technical Arsenal</h3>
+                            <div className="grid grid-cols-2 gap-x-4 gap-y-6">
+                                {['Creative Direction', 'Brand Strategy', 'UI/UX Design', 'Visual Identity', 'Adobe Suite', 'Figma', 'Motion Design', 'Print & Packaging'].map(skill => (
+                                    <div key={skill} className="flex items-center gap-3 group">
+                                        <span className="w-1.5 h-1.5 bg-white/20 rounded-full group-hover:bg-accent transition-colors" />
+                                        <span className="uppercase text-xs font-bold tracking-wider text-secondary group-hover:text-white transition-colors">{skill}</span>
                                     </div>
                                 ))}
                             </div>

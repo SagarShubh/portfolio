@@ -43,7 +43,7 @@ const PortfolioSection = () => {
     return (
         <section id="work" className="py-20 min-h-screen bg-secondary">
             <div className="container">
-                <h2 className="text-4xl md:text-6xl font-bold mb-12 uppercase">Selected Work</h2>
+                <h2 className="text-4xl md:text-6xl font-bold mb-20 uppercase">Selected Work</h2>
 
                 {/* Categories Filter - Horizontal Scroll */}
                 <div className="flex gap-3 overflow-x-auto pb-8 mb-12 no-scrollbar touch-pan-x items-center">
@@ -62,8 +62,8 @@ const PortfolioSection = () => {
                     ))}
                 </div>
 
-                {/* Grid - Increased Density */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {/* Grid - Increased Size for Visibility */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                     {filteredProjects.map((project, idx) => (
                         <Link
                             key={`${project.id}-${idx}`}
