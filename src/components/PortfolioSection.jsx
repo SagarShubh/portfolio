@@ -1,6 +1,6 @@
 
 import React, { useState, useMemo } from 'react';
-import ProjectDetailModal from './ProjectDetailModal';
+import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projects'; // Will be generated
 
 const PortfolioSection = () => {
@@ -46,7 +46,6 @@ const PortfolioSection = () => {
                 <h2 className="text-4xl md:text-6xl font-bold mb-12 uppercase">Selected Work</h2>
 
                 {/* Categories Filter - Horizontal Scroll */}
-                {/* Categories Filter - Horizontal Scroll */}
                 <div className="flex gap-3 overflow-x-auto pb-8 mb-12 no-scrollbar touch-pan-x items-center">
                     <span className="text-secondary text-xs uppercase tracking-widest mr-4 hidden md:block">Filter By:</span>
                     {categories.map(cat => (
@@ -63,15 +62,17 @@ const PortfolioSection = () => {
                     ))}
                 </div>
 
-                {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Grid - Increased Density */}
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {filteredProjects.map((project, idx) => (
-                        <div
+                        <Link
                             key={`${project.id}-${idx}`}
-                            onClick={() => setSelectedProject(project)}
-                            className="group cursor-pointer project-card"
+                            to={`/project/${project.id}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group cursor-pointer project-card block"
                         >
-                            <div className="aspect-[4/3] bg-black/50 overflow-hidden rounded-lg mb-4 relative">
+                            <div className="aspect-[4/3] bg-black/50 overflow-hidden rounded-sm mb-3 relative border border-white/5 group-hover:border-accent/50 transition-colors">
                                 {project.images && project.images.length > 0 ? (
                                     <img
                                         src={project.images[0]}
@@ -80,13 +81,13 @@ const PortfolioSection = () => {
                                         loading="lazy"
                                     />
                                 ) : (
-                                    <div className="flex items-center justify-center h-full text-zinc-700">No Preview</div>
+                                    <div className="flex items-center justify-center h-full text-zinc-700 text-xs">No Preview</div>
                                 )}
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                             </div>
-                            <h3 className="text-xl font-bold uppercase group-hover:text-accent transition-colors">{project.title}</h3>
-                            <p className="text-sm text-secondary">{project.category}</p>
-                        </div>
+                            <h3 className="text-sm md:text-base font-bold uppercase group-hover:text-accent transition-colors truncate">{project.title.replace(/-/g, ' ')}</h3>
+                            <p className="text-xs text-secondary truncate">{project.category}</p>
+                        </Link>
                     ))}
                 </div>
 
@@ -98,15 +99,7 @@ const PortfolioSection = () => {
                 )}
             </div>
 
-            {/* Modal */}
-            {selectedProject && (
-                <ProjectDetailModal
-                    project={selectedProject}
-                    onClose={() => setSelectedProject(null)}
-                    onNext={handleNext}
-                    onPrev={handlePrev}
-                />
-            )}
+            {/* Removed Modal */}
         </section>
     );
 };
