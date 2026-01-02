@@ -119,7 +119,7 @@ function Home() {
                 {/* Contact Section via Wizard */}
                 <section id="contact" className="py-24 md:py-40 relative bg-black z-10">
                     <div className="container max-w-6xl mx-auto px-6">
-                        <div className="grid lg:grid-cols-2 gap-20 items-start mb-20">
+                        <div className="grid lg:grid-cols-2 gap-20 items-start mb-32">
                             <div>
                                 <h2 className="text-accent uppercase tracking-[0.3em] text-sm font-medium mb-4">Start a Project</h2>
                                 <h3 className="text-5xl md:text-8xl font-black uppercase leading-[0.9] mb-8">Let's build <br /> something <span className="text-accent">legendary</span>.</h3>
