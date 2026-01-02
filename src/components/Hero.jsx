@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowDown } from 'lucide-react';
 import gsap from 'gsap';
 import TextReveal from './TextReveal';
@@ -50,15 +50,7 @@ const Hero = () => {
     return (
         <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
             {/* 3D Shape - Desktop Only */}
-            {!isMobile && (
-                <div className="absolute inset-0 z-10 pointer-events-none opacity-60 mix-blend-screen">
-                    <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-                        <ambientLight intensity={0.5} />
-                        <directionalLight position={[10, 10, 5]} intensity={1} />
-                        <InteractiveShape />
-                    </Canvas>
-                </div>
-            )}
+            {!isMobile && <InteractiveShape />}
 
             {/* Background Gradient Blob */}
             <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
