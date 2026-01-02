@@ -3,6 +3,7 @@ import { ArrowDown } from 'lucide-react';
 import gsap from 'gsap';
 import TextReveal from './TextReveal';
 import Magnetic from './Magnetic';
+import InteractiveShape from './InteractiveShape';
 
 const Hero = () => {
     const titleRef = useRef(null);
@@ -37,6 +38,8 @@ const Hero = () => {
 
     return (
         <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+            <InteractiveShape />
+
             {/* Background Gradient Blob */}
             <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
 

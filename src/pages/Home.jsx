@@ -21,6 +21,8 @@ import PortfolioSection from '../components/PortfolioSection';
 import Contact from '../components/Contact';
 import Testimonials from '../components/Testimonials';
 import Stats from '../components/Stats';
+import Process from '../components/Process';
+import ProjectWizard from '../components/ProjectWizard';
 
 import PageTransition from '../components/PageTransition';
 
@@ -99,7 +101,25 @@ function Home() {
                     </div>
                 </section>
 
-                <Contact />
+                <Process />
+
+                {/* Contact Section via Wizard */}
+                <section id="contact" className="py-24 md:py-40 relative">
+                    <div className="container max-w-6xl mx-auto px-6">
+                        <div className="grid md:grid-cols-2 gap-20 items-center mb-20">
+                            <div>
+                                <h2 className="text-accent uppercase tracking-[0.3em] text-sm font-medium mb-4">Start a Project</h2>
+                                <h3 className="text-5xl md:text-7xl font-black uppercase leading-[0.9] mb-8">Let's build <br /> something <span className="text-accent">legendary</span>.</h3>
+                                <p className="text-secondary text-lg max-w-md">Ready to take the leap? Tell me about your vision, and let's craft a digital experience that dominates.</p>
+                            </div>
+                            <div>
+                                {/* Decorative elements could go here */}
+                            </div>
+                        </div>
+
+                        <ProjectWizard />
+                    </div>
+                </section>
             </main>
 
             <footer className="py-8 text-center text-secondary text-sm border-t border-white/10">
