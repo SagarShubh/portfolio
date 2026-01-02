@@ -75,8 +75,8 @@ const ProjectWizard = () => {
                         transition={{ duration: 0.4, ease: "easeOut" }}
                         className="space-y-12 relative"
                     >
-                        <h3 className="text-4xl md:text-6xl font-black uppercase text-white leading-none tracking-tight">
-                            What are we <br /><span className="text-white/20">Building?</span>
+                        <h3 className="text-4xl md:text-6xl font-black uppercase text-white leading-[0.9] tracking-tight">
+                            What are we <br /><span className="text-white/40">Building?</span>
                         </h3>
 
                         <div className="flex flex-wrap gap-4">
@@ -84,9 +84,9 @@ const ProjectWizard = () => {
                                 <button
                                     key={s}
                                     onClick={() => handleServiceToggle(s)}
-                                    className={`relative group overflow-hidden px-8 py-6 border text-lg md:text-xl uppercase tracking-wider transition-all duration-300 ${formData.service.includes(s)
-                                            ? 'bg-white text-black border-white translate-y-[-2px] shadow-[0_10px_30px_-10px_rgba(255,255,255,0.2)]'
-                                            : 'bg-white/5 border-white/10 text-white/70 hover:bg-white hover:text-black hover:border-white'
+                                    className={`relative group overflow-hidden px-8 py-6 border text-xl uppercase tracking-wider transition-all duration-300 ${formData.service.includes(s)
+                                        ? 'bg-white text-black border-white translate-y-[-2px] shadow-[0_10px_30px_-10px_rgba(255,255,255,0.2)]'
+                                        : 'bg-white/5 border-white/10 text-white/70 hover:bg-white hover:text-black hover:border-white'
                                         }`}
                                 >
                                     <span className="relative z-10">{s}</span>
@@ -115,8 +115,8 @@ const ProjectWizard = () => {
                         transition={{ duration: 0.4, ease: "easeOut" }}
                         className="space-y-12 relative"
                     >
-                        <h3 className="text-4xl md:text-6xl font-black uppercase text-white leading-none tracking-tight">
-                            Expected <br /><span className="text-white/20">Investment?</span>
+                        <h3 className="text-4xl md:text-6xl font-black uppercase text-white leading-[0.9] tracking-tight">
+                            Expected <br /><span className="text-white/40">Investment?</span>
                         </h3>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -124,13 +124,13 @@ const ProjectWizard = () => {
                                 <button
                                     key={b}
                                     onClick={() => setFormData({ ...formData, budget: b })}
-                                    className={`p-8 border text-left transition-all duration-300 group ${formData.budget === b
-                                            ? 'bg-white text-black border-white shadow-[0_10px_30px_-10px_rgba(255,255,255,0.2)]'
-                                            : 'bg-white/5 border-white/10 text-white/70 hover:bg-white hover:text-black hover:border-white'
+                                    className={`p-10 border text-left transition-all duration-300 group ${formData.budget === b
+                                        ? 'bg-white text-black border-white shadow-[0_10px_30px_-10px_rgba(255,255,255,0.2)] scale-[1.02]'
+                                        : 'bg-white/5 border-white/10 text-white/70 hover:bg-white/10 hover:border-white/30'
                                         }`}
                                 >
-                                    <span className={`text-3xl font-bold block mb-2 ${formData.budget === b ? 'text-black' : 'text-white group-hover:text-black'}`}>{b}</span>
-                                    <span className="text-xs uppercase tracking-widest opacity-60">Estimated Budget</span>
+                                    <span className={`text-4xl font-bold block mb-3 ${formData.budget === b ? 'text-black' : 'text-white group-hover:text-white'}`}>{b}</span>
+                                    <span className={`text-sm uppercase tracking-widest ${formData.budget === b ? 'text-black/60' : 'text-white/40'}`}>Estimated Budget</span>
                                 </button>
                             ))}
                         </div>
@@ -157,39 +157,39 @@ const ProjectWizard = () => {
                         transition={{ duration: 0.4, ease: "easeOut" }}
                         className="space-y-12 relative"
                     >
-                        <h3 className="text-4xl md:text-6xl font-black uppercase text-white leading-none tracking-tight">
-                            Final <br /><span className="text-white/20">Details</span>
+                        <h3 className="text-4xl md:text-6xl font-black uppercase text-white leading-[0.9] tracking-tight">
+                            Final <br /><span className="text-white/40">Details</span>
                         </h3>
 
-                        <div className="space-y-8 max-w-3xl">
-                            <div className="grid md:grid-cols-2 gap-8">
-                                <div className="group">
-                                    <label className="block text-xs uppercase tracking-widest text-white/50 mb-3 group-focus-within:text-accent transition-colors">Your Name</label>
+                        <div className="space-y-10 max-w-4xl">
+                            <div className="grid md:grid-cols-2 gap-10">
+                                <div className="group relative">
+                                    <label className="text-xs uppercase tracking-widest text-white/50 mb-4 block group-focus-within:text-accent transition-colors">Your Name</label>
                                     <input
                                         type="text"
-                                        className="w-full bg-white/5 border-b border-white/10 py-4 px-4 text-xl text-white placeholder:text-white/10 focus:bg-white/10 focus:border-accent focus:outline-none transition-all rounded-t-sm"
+                                        className="w-full bg-white/5 border-b-2 border-white/10 py-6 px-6 text-2xl text-white placeholder:text-white/20 focus:bg-white/10 focus:border-accent focus:outline-none transition-all rounded-t-sm"
                                         placeholder="John Doe"
                                         value={formData.name}
                                         onChange={e => setFormData({ ...formData, name: e.target.value })}
                                     />
                                 </div>
-                                <div className="group">
-                                    <label className="block text-xs uppercase tracking-widest text-white/50 mb-3 group-focus-within:text-accent transition-colors">Your Email</label>
+                                <div className="group relative">
+                                    <label className="text-xs uppercase tracking-widest text-white/50 mb-4 block group-focus-within:text-accent transition-colors">Your Email</label>
                                     <input
                                         type="email"
-                                        className="w-full bg-white/5 border-b border-white/10 py-4 px-4 text-xl text-white placeholder:text-white/10 focus:bg-white/10 focus:border-accent focus:outline-none transition-all rounded-t-sm"
+                                        className="w-full bg-white/5 border-b-2 border-white/10 py-6 px-6 text-2xl text-white placeholder:text-white/20 focus:bg-white/10 focus:border-accent focus:outline-none transition-all rounded-t-sm"
                                         placeholder="john@example.com"
                                         value={formData.email}
                                         onChange={e => setFormData({ ...formData, email: e.target.value })}
                                     />
                                 </div>
                             </div>
-                            <div className="group">
-                                <label className="block text-xs uppercase tracking-widest text-white/50 mb-3 group-focus-within:text-accent transition-colors">Project Details</label>
+                            <div className="group relative">
+                                <label className="text-xs uppercase tracking-widest text-white/50 mb-4 block group-focus-within:text-accent transition-colors">Project Details</label>
                                 <textarea
                                     rows="1"
-                                    className="w-full bg-white/5 border-b border-white/10 py-4 px-4 text-xl text-white placeholder:text-white/10 focus:bg-white/10 focus:border-accent focus:outline-none transition-all resize-none overflow-hidden rounded-t-sm"
-                                    placeholder="Tell me about your goals..."
+                                    className="w-full bg-white/5 border-b-2 border-white/10 py-6 px-6 text-2xl text-white placeholder:text-white/20 focus:bg-white/10 focus:border-accent focus:outline-none transition-all resize-none overflow-hidden rounded-t-sm"
+                                    placeholder="Tell me about your vision..."
                                     onInput={(e) => {
                                         e.target.style.height = "auto";
                                         e.target.style.height = e.target.scrollHeight + "px";
@@ -205,9 +205,9 @@ const ProjectWizard = () => {
                             <button
                                 onClick={handleSubmit}
                                 disabled={!formData.name || !formData.email}
-                                className="group relative bg-white text-black px-12 py-6 font-black uppercase tracking-widest hover:bg-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden shadow-[0_0_40px_-10px_rgba(255,255,255,0.5)] hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.8)]"
+                                className="group relative bg-white text-black px-16 py-8 font-black uppercase tracking-widest text-lg hover:bg-accent transition-all disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden shadow-[0_0_40px_-10px_rgba(255,255,255,0.5)] hover:shadow-[0_0_80px_-10px_rgba(255,255,255,0.8)] hover:-translate-y-1"
                             >
-                                <span className="relative z-10">Send Proposal</span>
+                                <span className="relative z-10 w-full text-center block">Send Proposal</span>
                                 <div className="absolute inset-0 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out" />
                             </button>
                         </div>

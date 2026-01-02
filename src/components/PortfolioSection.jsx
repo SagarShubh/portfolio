@@ -72,21 +72,24 @@ const PortfolioSection = () => {
                             rel="noopener noreferrer"
                             className="group cursor-pointer project-card block"
                         >
-                            <div className="aspect-[4/3] bg-black/50 overflow-hidden rounded-sm mb-3 relative border border-white/5 group-hover:border-accent/50 transition-colors">
+                            <div className="aspect-square bg-white/5 overflow-hidden rounded-sm mb-4 relative border border-white/5 group-hover:border-accent/50 transition-colors">
                                 {project.images && project.images.length > 0 ? (
-                                    <img
-                                        src={project.images[0]}
-                                        alt={project.title}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                        loading="lazy"
-                                    />
+                                    <React.Fragment>
+                                        <img
+                                            src={project.images[0]}
+                                            alt={project.title}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                            loading="lazy"
+                                        />
+                                        {/* Overlay Shadow */}
+                                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                                    </React.Fragment>
                                 ) : (
                                     <div className="flex items-center justify-center h-full text-zinc-700 text-xs">No Preview</div>
                                 )}
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                             </div>
-                            <h3 className="text-sm md:text-base font-bold uppercase group-hover:text-accent transition-colors truncate">{project.title.replace(/-/g, ' ')}</h3>
-                            <p className="text-xs text-secondary truncate">{project.category}</p>
+                            <h3 className="text-base font-bold uppercase group-hover:text-accent transition-colors truncate tracking-wide">{project.title.replace(/-/g, ' ')}</h3>
+                            <p className="text-xs text-secondary/60 truncate uppercase tracking-widest">{project.category}</p>
                         </Link>
                     ))}
                 </div>
