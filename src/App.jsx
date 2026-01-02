@@ -16,8 +16,10 @@ function ScrollToTop() {
   return null;
 }
 
+import { HelmetProvider } from 'react-helmet-async';
 
 import Legal from './pages/Legal';
+import NotFound from './pages/NotFound';
 import CustomCursor from './components/CustomCursor';
 
 // ... existing code ...
@@ -31,6 +33,7 @@ function AnimatedRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/project/:id" element={<ProjectPage />} />
         <Route path="/legal" element={<Legal />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   );
@@ -50,14 +53,16 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <CustomCursor />
-      <ScrollToTop />
-      {/* Cinematic Noise Overlay Global */}
-      <div className="fixed inset-0 z-[9999] pointer-events-none opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+    <HelmetProvider>
+      <Router>
+        <CustomCursor />
+        <ScrollToTop />
+        {/* Cinematic Noise Overlay Global */}
+        <div className="fixed inset-0 z-[9999] pointer-events-none opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
-      <AnimatedRoutes />
-    </Router>
+        <AnimatedRoutes />
+      </Router>
+    </HelmetProvider>
   );
 }
 

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import PageTransition from '../components/PageTransition';
+import SEOHead from '../components/SEOHead';
 
 const Legal = () => {
     useEffect(() => {
@@ -9,6 +10,7 @@ const Legal = () => {
 
     return (
         <PageTransition>
+            <SEOHead title="Legal Information" description="Privacy Policy and Terms of Service for Sagar Vaishnava." />
             <Navbar />
             <main className="min-h-screen pt-32 pb-20 container mx-auto px-6">
                 <div className="max-w-4xl mx-auto">

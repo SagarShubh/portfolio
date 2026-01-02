@@ -24,9 +24,12 @@ import Stats from '../components/Stats';
 
 import PageTransition from '../components/PageTransition';
 
+import SEOHead from '../components/SEOHead';
+
 function Home() {
     return (
         <PageTransition>
+            <SEOHead />
             <Navbar />
             <Hero />
 
