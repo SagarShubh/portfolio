@@ -71,49 +71,62 @@ function Home() {
                             </div>
                         </div>
 
-                        <div className="order-1 md:order-2">
-                            <h3 className="text-xs uppercase tracking-[0.3em] text-accent mb-8 border-b border-white/10 pb-4">Technical Arsenal</h3>
-                            <div className="grid grid-cols-2 gap-4">
-                                {[
-                                    { name: 'Creative Direction', icon: 'Palette' },
-                                    { name: 'Brand Strategy', icon: 'Target' },
-                                    { name: 'UI/UX Design', icon: 'Layout' },
-                                    { name: 'Visual Identity', icon: 'Fingerprint' },
-                                    { name: 'Adobe Suite', icon: 'Layers' },
-                                    { name: 'Figma', icon: 'PenTool' },
-                                    { name: 'Motion Design', icon: 'Film' },
-                                    { name: 'Print & Packaging', icon: 'Package' }
-                                ].map((skill, idx) => (
-                                    <div key={idx} className="group bg-white/5 hover:bg-white/10 border border-white/5 rounded-sm p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30">
-                                        <div className="flex items-center justify-between mb-2">
-                                            <div className="text-accent opacity-70 group-hover:opacity-100 transition-opacity">
-                                                {/* Requires dynamic icon loading or pre-defined Import */}
-                                                {/* For now we use a generic placeholder or dynamic lookup if we import them */}
-                                                <SkillIcon name={skill.icon} />
-                                            </div>
-                                            <span className="text-[10px] text-white/30 font-mono">0{idx + 1}</span>
-                                        </div>
-                                        <h4 className="text-xs font-bold uppercase tracking-wider text-secondary group-hover:text-white transition-colors">{skill.name}</h4>
+                        <div className="order-1 md:order-2 pl-0 md:pl-20">
+                            <h3 className="text-xs uppercase tracking-[0.3em] text-accent mb-12 border-b border-white/10 pb-4">The Toolkit</h3>
+
+                            <div className="space-y-10">
+                                <div>
+                                    <h4 className="text-white font-bold uppercase mb-4 tracking-widest text-xs opacity-80">Product & Experience</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {['Figma', 'Framer', 'Prototyping', 'Design Systems', 'User Research', 'Wireframing', 'Whimsical'].map(item => (
+                                            <span key={item} className="px-3 py-1.5 border border-white/10 rounded-sm text-[10px] md:text-xs uppercase tracking-wider text-secondary hover:text-black hover:bg-white hover:border-white transition-all cursor-default">
+                                                {item}
+                                            </span>
+                                        ))}
                                     </div>
-                                ))}
+                                </div>
+
+                                <div>
+                                    <h4 className="text-white font-bold uppercase mb-4 tracking-widest text-xs opacity-80">Visual & Motion</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {['Adobe Photoshop', 'Illustrator', 'After Effects', 'Premiere Pro', 'Spline 3D', 'Blender', 'Midjourney', 'Cinema 4D'].map(item => (
+                                            <span key={item} className="px-3 py-1.5 border border-white/10 rounded-sm text-[10px] md:text-xs uppercase tracking-wider text-secondary hover:text-black hover:bg-white hover:border-white transition-all cursor-default">
+                                                {item}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 className="text-white font-bold uppercase mb-4 tracking-widest text-xs opacity-80">Creative Engineering</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {['Webflow', 'React', 'Three.js', 'Tailwind', 'GSAP', 'HTML/CSS', 'Git'].map(item => (
+                                            <span key={item} className="px-3 py-1.5 border border-white/10 rounded-sm text-[10px] md:text-xs uppercase tracking-wider text-secondary hover:text-black hover:bg-white hover:border-white transition-all cursor-default">
+                                                {item}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <Process />
+                <div className="relative z-10 bg-black">
+                    <Process />
+                </div>
 
                 {/* Contact Section via Wizard */}
-                <section id="contact" className="py-24 md:py-40 relative">
+                <section id="contact" className="py-24 md:py-40 relative bg-black z-10">
                     <div className="container max-w-6xl mx-auto px-6">
-                        <div className="grid md:grid-cols-2 gap-20 items-center mb-20">
+                        <div className="grid lg:grid-cols-2 gap-20 items-start mb-20">
                             <div>
                                 <h2 className="text-accent uppercase tracking-[0.3em] text-sm font-medium mb-4">Start a Project</h2>
-                                <h3 className="text-5xl md:text-7xl font-black uppercase leading-[0.9] mb-8">Let's build <br /> something <span className="text-accent">legendary</span>.</h3>
-                                <p className="text-secondary text-lg max-w-md">Ready to take the leap? Tell me about your vision, and let's craft a digital experience that dominates.</p>
+                                <h3 className="text-5xl md:text-8xl font-black uppercase leading-[0.9] mb-8">Let's build <br /> something <span className="text-accent">legendary</span>.</h3>
+                                <p className="text-secondary text-xl max-w-md font-light leading-relaxed">Ready to take the leap? Tell me about your vision, and let's craft a digital experience that dominates.</p>
                             </div>
-                            <div>
-                                {/* Decorative elements could go here */}
+                            <div className="hidden lg:block">
+                                {/* Spacer or interactive element */}
                             </div>
                         </div>
 
