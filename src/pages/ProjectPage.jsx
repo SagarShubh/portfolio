@@ -151,6 +151,13 @@ const ProjectPage = () => {
                             </div>
                         </div>
                     )}
+                    {/* Next Project CTA */}
+                    <div className="py-32 border-t border-white/10 mt-20 text-center">
+                        <h3 className="text-white/50 uppercase tracking-[0.2em] mb-8 text-sm">Ready to build something?</h3>
+                        <a href="/#contact" className="inline-block text-4xl md:text-8xl font-black uppercase text-white hover:text-accent transition-colors">
+                            Let's Talk
+                        </a>
+                    </div>
                 </div>
 
                 {/* Footer Nav */}

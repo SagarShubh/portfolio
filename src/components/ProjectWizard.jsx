@@ -39,12 +39,49 @@ const ProjectWizard = () => {
     const nextStep = () => setStep(prev => prev + 1);
     const prevStep = () => setStep(prev => prev - 1);
 
-    const handleSubmit = (e) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form Submitted:", formData);
-        alert("Thanks! I'll be in touch soon.");
-        setStep(1);
-        setFormData({ service: [], budget: '', name: '', email: '', details: '' });
+        setIsSubmitting(true);
+
+        const object = {
+            access_key: "f06556ce-5bb2-4ef6-afb9-1f9fdf5ab2ac", // Web3Forms Access Key
+            subject: `New Lead: ${formData.name}`,
+            from_name: "Portfolio Wizard",
+            ...formData,
+            service: formData.service.join(", ") // Flatten array
+        };
+
+        const json = JSON.stringify(object);
+
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                body: json
+            });
+            const result = await res.json();
+
+            if (result.success) {
+                setIsSuccess(true);
+                setStep(1);
+                setFormData({ service: [], budget: '', name: '', email: '', details: '' });
+                // Reset success message after 5 seconds
+                setTimeout(() => setIsSuccess(false), 5000);
+            } else {
+                alert("Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Error sending form. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -207,8 +244,10 @@ const ProjectWizard = () => {
                                 disabled={!formData.name || !formData.email}
                                 className="group relative bg-white text-black px-16 py-8 font-black uppercase tracking-widest text-lg hover:bg-accent transition-all disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden shadow-[0_0_40px_-10px_rgba(255,255,255,0.5)] hover:shadow-[0_0_80px_-10px_rgba(255,255,255,0.8)] hover:-translate-y-1"
                             >
-                                <span className="relative z-10 w-full text-center block">Send Proposal</span>
-                                <div className="absolute inset-0 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out" />
+                                <span className="relative z-10 w-full text-center block">
+                                    {isSubmitting ? "Sending..." : (isSuccess ? "Sent! 🚀" : "Send Proposal")}
+                                </span>
+                                <div className={`absolute inset-0 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out ${isSuccess ? 'bg-green-500' : 'bg-accent'}`} />
                             </button>
                         </div>
                     </motion.div>
