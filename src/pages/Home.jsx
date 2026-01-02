@@ -11,10 +11,15 @@ import PageTransition from '../components/PageTransition';
 
 import Reveal from '../components/Reveal';
 import Footer from '../components/Footer';
+import SEOHead from '../components/SEOHead';
 
 const Home = () => {
     return (
         <PageTransition>
+            <SEOHead
+                title="Sagar Vaishnava | Visual Strategist"
+                description="Digital portfolio of Sagar Vaishnava. Specializing in brutalist aesthetics, high-end web design, and digital brand transformation."
+            />
             <main className="bg-black min-h-screen text-white overflow-x-hidden selection:bg-accent selection:text-black">
                 {/* Navbar */}
                 <Navbar />
