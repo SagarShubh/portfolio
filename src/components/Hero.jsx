@@ -36,9 +36,29 @@ const Hero = () => {
             );
     }, []);
 
+    const [isMobile, setIsMobile] = useState(true);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-            <InteractiveShape />
+            {/* 3D Shape - Desktop Only */}
+            {!isMobile && (
+                <div className="absolute inset-0 z-10 pointer-events-none opacity-60 mix-blend-screen">
+                    <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+                        <ambientLight intensity={0.5} />
+                        <directionalLight position={[10, 10, 5]} intensity={1} />
+                        <InteractiveShape />
+                    </Canvas>
+                </div>
+            )}
 
             {/* Background Gradient Blob */}
             <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />

@@ -4,6 +4,8 @@ import { AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 import Home from './pages/Home';
 import ProjectPage from './pages/ProjectPage';
+import About from './pages/About';
+import Thoughts from './pages/Thoughts';
 
 import Preloader from './components/Preloader';
 import CustomCursor from './components/CustomCursor';
@@ -33,6 +35,8 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/project/:id" element={<ProjectPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/thoughts" element={<Thoughts />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
