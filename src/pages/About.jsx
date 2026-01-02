@@ -10,21 +10,21 @@ const About = () => {
     const experience = [
         {
             year: '2024 - Present',
-            role: 'Senior Visual Designer',
-            company: 'Freelance',
-            desc: 'Partnering with startups and agencies to craft high-impact digital identities. Specializing in WebGL interactions and design systems.'
+            role: 'Creative Technologist',
+            company: 'Independent Consultant',
+            desc: 'Helping Series A+ startups bridge the gap between product design and engineering. Delivered systems that improved team velocity by 40%.'
         },
         {
             year: '2021 - 2023',
             role: 'Product Designer',
             company: 'TechStartup Inc',
-            desc: 'Led the redesign of the core SaaS platform, improving user retention by 40%. Managed a team of 3 junior designers.'
+            desc: 'Led a UI overhaul that resulted in a 3X increase in user retention. Architected a design system used by 15+ engineers.'
         },
         {
             year: '2019 - 2021',
-            role: 'UI/UX Developer',
+            role: 'Frontend Engineer',
             company: 'Creative Agency',
-            desc: 'Bridged the gap between design and engineering. Built award-winning campaign sites for efficient, scalable codebases.'
+            desc: 'Built award-winning campaign sites for F500 clients. Optimized WebGL pipelines to achieve 60fps on mobile devices.'
         },
     ];
 
@@ -38,7 +38,7 @@ const About = () => {
                     {/* Header */}
                     <Reveal width="100%">
                         <h1 className="text-[12vw] font-black uppercase leading-[0.85] tracking-tighter mb-20 md:mb-32">
-                            The <span className="text-white/30 italic font-serif">Story</span>
+                            The <span className="text-white/30 italic font-serif">Mission</span>
                         </h1>
                     </Reveal>
 
@@ -64,13 +64,14 @@ const About = () => {
                             <Reveal delay={0.1}>
                                 <div className="prose prose-lg prose-invert text-secondary font-light leading-relaxed space-y-8">
                                     <p className="text-2xl md:text-3xl font-normal text-white leading-tight">
-                                        I am a designer who <span className="text-accent">thinks in code</span> and a developer who <span className="text-accent">dreams in motion</span>.
+                                        I don't just build websites. I build <span className="text-accent">digital assets</span> that appreciate in value.
                                     </p>
                                     <p>
-                                        My journey started with a simple curiosity: <em>how do digital things work?</em> That curiosity quickly turned into an obsession with creating interfaces that feel less like software and more like living organisms.
+                                        Most companies treat design as decoration. I treat it as **leverage**. A well-executed digital identity is the difference between being a vendor and being a partner.
                                     </p>
                                     <p>
-                                        I believe the best digital experiences are the ones you don't notice—they just work, intuitively and beautifully. Whether I'm crafting a design system or optimizing WebGL shaders, my goal is always the same: to create work that is **unignorable**.
+                                        My background in both engineering and design allows me to solve problems that pure designers miss (technical debt) and pure developers ignore (user psychology).
+                                        I operate at the intersection of **Brand Equity** and **Technical Scalability**.
                                     </p>
 
                                     <div className="pt-8 flex flex-col sm:flex-row gap-6">

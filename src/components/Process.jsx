@@ -5,23 +5,23 @@ const Process = () => {
     const steps = [
         {
             num: "01",
-            title: "Discovery",
-            desc: "I dive deep into your brand, your audience, and your goals. We skip the fluff and identify the core problem we're solving."
+            title: "Diagnosis",
+            desc: "Before a single pixel is moved, I audit your current metrics, market position, and conversion blockers. We define the KPI's that matter."
         },
         {
             num: "02",
-            title: "Strategy",
-            desc: "We build a roadmap. I define the visual direction, user journeys, and technical architecture to ensure scalability."
+            title: "Blueprint",
+            desc: "I architect a solution that balances brand equity with technical scalability. We aim for a system that reduces technical debt by design."
         },
         {
             num: "03",
-            title: "Execution",
-            desc: "The magic happens. I craft pixel-perfect designs and clean code, iterating based on feedback until it's sharp."
+            title: "Production",
+            desc: "High-velocity development using modern stacks. I build component libraries that your team can scale, not just one-off pages."
         },
         {
             num: "04",
-            title: "Launch",
-            desc: "We go live. I ensure smooth deployment, SEO optimization, and handover so you can run with it."
+            title: "Growth",
+            desc: "Launch is just the start. I set up analytics, SEO infrastructure, and performance monitoring to ensure the asset appreciates over time."
         }
     ];
 
