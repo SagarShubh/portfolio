@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import '../index.css';
+import Magnetic from './Magnetic';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -51,14 +52,15 @@ const Navbar = () => {
                 {/* Desktop Menu */}
                 <div className="hidden md:flex gap-8">
                     {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-                            className="text-sm uppercase tracking-widest hover:text-accent transition-colors"
-                        >
-                            {link.name}
-                        </a>
+                        <Magnetic key={link.name} strength={20}>
+                            <a
+                                href={link.href}
+                                onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+                                className="text-sm uppercase tracking-widest hover:text-accent transition-colors inline-block px-4 py-2"
+                            >
+                                {link.name}
+                            </a>
+                        </Magnetic>
                     ))}
                 </div>
 

@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Contact from '../components/Contact';
 import { projectsData } from '../data/projects';
 import { ArrowLeft } from 'lucide-react';
+import PageTransition from '../components/PageTransition';
 
 const ProjectPage = () => {
     const { id } = useParams();
@@ -23,6 +24,8 @@ const ProjectPage = () => {
         window.scrollTo(0, 0);
     }, [id]);
 
+
+
     if (!project) {
         return (
             <div className="min-h-screen bg-primary flex items-center justify-center text-white">
@@ -35,7 +38,7 @@ const ProjectPage = () => {
     }
 
     return (
-        <div className="min-h-screen bg-primary text-white">
+        <PageTransition className="min-h-screen bg-primary text-white">
             <Navbar />
 
             <main className="pt-48 pb-20">
@@ -77,7 +80,7 @@ const ProjectPage = () => {
             <footer className="py-8 text-center text-secondary text-sm border-t border-white/10">
                 <p>&copy; {new Date().getFullYear()} Sagar Vaishnava. All Rights Reserved.</p>
             </footer>
-        </div>
+        </PageTransition>
     );
 };
 

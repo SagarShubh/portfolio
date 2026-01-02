@@ -19,15 +19,22 @@ const SkillIcon = ({ name }) => {
 import Hero from '../components/Hero';
 import PortfolioSection from '../components/PortfolioSection';
 import Contact from '../components/Contact';
+import Testimonials from '../components/Testimonials';
+import Stats from '../components/Stats';
+
+import PageTransition from '../components/PageTransition';
 
 function Home() {
     return (
-        <>
+        <PageTransition>
             <Navbar />
             <Hero />
 
+
             <main>
+                <Stats />
                 <PortfolioSection />
+                <Testimonials />
 
                 {/* About Section */}
                 <section id="about" className="py-24 md:py-40 bg-secondary/30 relative overflow-hidden">
@@ -95,12 +102,12 @@ function Home() {
             <footer className="py-8 text-center text-secondary text-sm border-t border-white/10">
                 <p>&copy; {new Date().getFullYear()} Sagar Vaishnava. All Rights Reserved.</p>
                 <div className="flex justify-center gap-6 mt-4 uppercase text-xs tracking-widest">
-                    <a href="#" className="hover:text-white transition-colors">Behance</a>
+                    <a href="https://www.behance.net/sagar942504106" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Behance</a>
                     <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-                    <a href="#" className="hover:text-white transition-colors">Instagram</a>
+                    <a href="/legal" className="hover:text-white transition-colors">Legal</a>
                 </div>
             </footer>
-        </>
+        </PageTransition>
     );
 }
 
