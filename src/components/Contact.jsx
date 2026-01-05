@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Loader, CheckCircle } from 'lucide-react';
+import { Mail, Loader, CheckCircle, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
     // Simple mock form submission
@@ -24,6 +24,12 @@ const Contact = () => {
                             <Mail className="w-8 h-8 text-accent mb-4" />
                             <h3 className="text-xl font-bold mb-2">Email Me</h3>
                             <a href="mailto:sagar1vaishnava@gmail.com" className="text-secondary hover:text-white transition-colors">sagar1vaishnava@gmail.com</a>
+                        </div>
+
+                        <div className="p-6 border border-white/10 rounded-lg hover:border-accent transition-colors">
+                            <MessageCircle className="w-8 h-8 text-accent mb-4" />
+                            <h3 className="text-xl font-bold mb-2">WhatsApp</h3>
+                            <a href="https://wa.me/917898999958" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors">+91 78989 99958</a>
                         </div>
                         {/* Other contact details if needed */}
                     </div>

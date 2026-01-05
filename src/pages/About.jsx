@@ -49,7 +49,7 @@ const About = () => {
                                 <div className="aspect-[3/4] relative overflow-hidden rounded-sm group">
                                     <div className="absolute inset-0 bg-accent/20 mix-blend-color z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                     <img
-                                        src="/profile.jpg"
+                                        src="/sagar.jpg"
                                         alt="Sagar Vaishnava"
                                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
                                     />

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 
 const ProjectWizard = () => {
     const [step, setStep] = useState(1);
@@ -249,6 +249,16 @@ const ProjectWizard = () => {
                                 </span>
                                 <div className={`absolute inset-0 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out ${isSuccess ? 'bg-green-500' : 'bg-accent'}`} />
                             </button>
+
+                            <a
+                                href="https://wa.me/917898999958"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex items-center gap-2 text-white/50 hover:text-green-400 transition-colors uppercase text-sm tracking-widest font-medium"
+                            >
+                                <MessageCircle className="w-5 h-5" />
+                                <span>Or Chat on WhatsApp</span>
+                            </a>
                         </div>
                     </motion.div>
                 )}
