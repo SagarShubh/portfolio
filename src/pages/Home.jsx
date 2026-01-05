@@ -10,6 +10,7 @@ import PortfolioSection from '../components/PortfolioSection';
 import PageTransition from '../components/PageTransition';
 
 import Reveal from '../components/Reveal';
+import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import SEOHead from '../components/SEOHead';
 
@@ -127,6 +128,10 @@ const Home = () => {
 
                     <Reveal width="100%" delay={0.2}>
                         <ProjectWizard />
+                    </Reveal>
+
+                    <Reveal width="100%" delay={0.4}>
+                        <Contact />
                     </Reveal>
                 </section>
 

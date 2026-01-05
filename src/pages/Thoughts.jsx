@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Reveal from '../components/Reveal';
@@ -70,7 +71,7 @@ const Thoughts = () => {
                                     className={`relative group border-t border-white/10 transition-all duration-500 ${hoveredPost && hoveredPost !== post.id ? 'opacity-30 blur-[1px]' : 'opacity-100'
                                         }`}
                                 >
-                                    <a href="#" className="block py-12 md:py-16 -mx-6 px-6 hover:bg-white/5 transition-colors">
+                                    <Link to={`/thoughts/${post.id}`} className="block py-12 md:py-16 -mx-6 px-6 hover:bg-white/5 transition-colors">
                                         <div className="grid md:grid-cols-12 gap-6 items-baseline relative z-10">
 
                                             {/* Date & Category */}
@@ -100,7 +101,7 @@ const Thoughts = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </motion.div>
                             ))}
                         </AnimatePresence>

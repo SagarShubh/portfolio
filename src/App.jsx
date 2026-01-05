@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import ProjectPage from './pages/ProjectPage';
 import About from './pages/About';
 import Thoughts from './pages/Thoughts';
+import BlogPost from './pages/BlogPost';
 
 import Preloader from './components/Preloader';
 import CustomCursor from './components/CustomCursor';
@@ -37,6 +38,7 @@ function AnimatedRoutes() {
         <Route path="/project/:id" element={<ProjectPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/thoughts" element={<Thoughts />} />
+        <Route path="/thoughts/:id" element={<BlogPost />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

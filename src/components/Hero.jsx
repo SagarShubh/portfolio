@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, MessageCircle } from 'lucide-react';
 import gsap from 'gsap';
 import TextReveal from './TextReveal';
 import Magnetic from './Magnetic';
@@ -79,8 +79,12 @@ const Hero = () => {
                             <div className="absolute inset-0 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
                         </a>
                     </Magnetic>
-                    <a href="https://www.behance.net/sagar942504106" target="_blank" rel="noopener noreferrer" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-wider text-sm hover:bg-white/5 hover:border-white transition-all rounded-sm">
-                        Behance Profile
+                    <a href="https://www.behance.net/sagar942504106" target="_blank" rel="noopener noreferrer" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-wider text-sm hover:bg-white/5 hover:border-white transition-all rounded-sm flex items-center gap-2">
+                        Behance
+                    </a>
+                    <a href="https://wa.me/917898999958" target="_blank" rel="noopener noreferrer" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-wider text-sm hover:bg-white/5 hover:border-white transition-all rounded-sm flex items-center gap-2">
+                        <MessageCircle size={18} />
+                        <span>WhatsApp</span>
                     </a>
                 </div>
             </div>
