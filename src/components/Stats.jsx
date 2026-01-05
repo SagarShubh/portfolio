@@ -11,7 +11,7 @@ const StatItem = ({ value, label, index }) => {
             <div className="absolute -left-6 top-0 bottom-0 w-px bg-white/10 hidden md:block" />
 
             <div className="flex items-baseline justify-center md:justify-start gap-1 mb-2">
-                <span className="text-6xl md:text-8xl font-black text-transparent stroke-text hover:text-white transition-colors duration-500">
+                <span className="text-6xl md:text-8xl font-black text-white">
                     {value}+
                 </span>
             </div>
