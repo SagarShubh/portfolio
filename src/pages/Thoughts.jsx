@@ -7,12 +7,12 @@ import SEOHead from '../components/SEOHead';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const posts = [
-    { id: 1, title: "The Death of Flat Design", date: "Jan 02, 2026", category: "Design", excerpt: "Why depth, texture, and skeuomorphism are making a massive comeback." },
-    { id: 2, title: "React Server Components", date: "Dec 18, 2025", category: "Engineering", excerpt: "How RSC changed my entire mental model of frontend architecture." },
-    { id: 3, title: "Motion as Meaning", date: "Nov 30, 2025", category: "Design", excerpt: "Physics-based animations feel more human. Stop using linear easings." },
-    { id: 4, title: "Accessible 3D Web", date: "Oct 12, 2025", category: "Engineering", excerpt: "WebGL that doesn't break the web for 20% of your users." },
-    { id: 5, title: "The Art of Micro-Interactions", date: "Sep 28, 2025", category: "Design", excerpt: "Small details that create emotional connection." },
-    { id: 6, title: "Scaling Design Systems", date: "Aug 15, 2025", category: "Strategy", excerpt: "From chaos to order: lessons from a year of refactoring." }
+    { id: 1, title: "The Death of Flat Design", date: "Jan 02, 2026", category: "Design", readTime: "5 min", excerpt: "Why depth, texture, and skeuomorphism are making a massive comeback." },
+    { id: 2, title: "React Server Components", date: "Dec 18, 2025", category: "Engineering", readTime: "8 min", excerpt: "How RSC changed my entire mental model of frontend architecture." },
+    { id: 3, title: "Motion as Meaning", date: "Nov 30, 2025", category: "Design", readTime: "4 min", excerpt: "Physics-based animations feel more human. Stop using linear easings." },
+    { id: 4, title: "Accessible 3D Web", date: "Oct 12, 2025", category: "Engineering", readTime: "6 min", excerpt: "WebGL that doesn't break the web for 20% of your users." },
+    { id: 5, title: "The Art of Micro-Interactions", date: "Sep 28, 2025", category: "Design", readTime: "3 min", excerpt: "Small details that create emotional connection." },
+    { id: 6, title: "Scaling Design Systems", date: "Aug 15, 2025", category: "Strategy", readTime: "10 min", excerpt: "From chaos to order: lessons from a year of refactoring." }
 ];
 
 const categories = ["All", "Design", "Engineering", "Strategy"];
@@ -45,8 +45,8 @@ const Thoughts = () => {
                                         key={cat}
                                         onClick={() => setFilter(cat)}
                                         className={`px-4 py-2 rounded-full border text-sm uppercase tracking-widest transition-all duration-300 ${filter === cat
-                                                ? 'bg-white text-black border-white'
-                                                : 'bg-transparent text-white/50 border-white/20 hover:border-white hover:text-white'
+                                            ? 'bg-white text-black border-white'
+                                            : 'bg-transparent text-white/50 border-white/20 hover:border-white hover:text-white'
                                             }`}
                                     >
                                         {cat}
@@ -76,7 +76,11 @@ const Thoughts = () => {
                                             {/* Date & Category */}
                                             <div className="md:col-span-3 flex flex-col gap-2">
                                                 <span className="font-mono text-accent text-xs">{post.date}</span>
-                                                <span className="text-xs uppercase tracking-widest text-white/40">{post.category}</span>
+                                                <div className="flex items-center gap-3">
+                                                    <span className="text-xs uppercase tracking-widest text-white/40">{post.category}</span>
+                                                    <span className="w-1 h-1 bg-white/20 rounded-full" />
+                                                    <span className="text-xs text-white/30">{post.readTime} read</span>
+                                                </div>
                                             </div>
 
                                             {/* Title & Excerpt */}
@@ -100,6 +104,35 @@ const Thoughts = () => {
                                 </motion.div>
                             ))}
                         </AnimatePresence>
+                    </div>
+
+                    {/* Newsletter Signup */}
+                    <div className="mt-40 border-t border-white/10 pt-20">
+                        <div className="bg-white/5 border border-white/10 p-10 md:p-16 rounded-2xl relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/10 blur-[100px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3" />
+
+                            <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
+                                <div>
+                                    <h3 className="text-3xl md:text-5xl font-bold mb-6">Stay ahead of the curve.</h3>
+                                    <p className="text-secondary text-lg font-light">
+                                        Join 5,000+ designers and engineers getting my weekly breakdown of what's next in digital product design.
+                                    </p>
+                                </div>
+                                <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+                                    <div className="flex flex-col md:flex-row gap-4">
+                                        <input
+                                            type="email"
+                                            placeholder="sagar@example.com"
+                                            className="flex-1 bg-black/20 border border-white/10 p-5 rounded-sm focus:border-accent outline-none text-white transition-colors"
+                                        />
+                                        <button className="bg-white text-black px-10 py-5 font-bold uppercase tracking-widest hover:bg-accent transition-colors rounded-sm">
+                                            Join
+                                        </button>
+                                    </div>
+                                    <p className="text-white/30 text-xs">No spam. Unsubscribe anytime.</p>
+                                </form>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Bottom Border */}

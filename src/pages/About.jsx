@@ -27,6 +27,9 @@ const About = () => {
             desc: 'Built award-winning campaign sites for F500 clients. Optimized WebGL pipelines to achieve 60fps on mobile devices.'
         },
     ];
+    const stacks = [
+        "React", "Next.js", "TypeScript", "Node.js", "WebGL", "Three.js", "GSAP", "Framer Motion", "TailwindCSS", "PostgreSQL", "AWS", "Figma"
+    ];
 
     return (
         <PageTransition>
@@ -119,6 +122,20 @@ const About = () => {
                                 </p>
                             </div>
                         </Reveal>
+                    </div>
+
+                    {/* Tech Stack Marquee */}
+                    <div className="mb-40 border-y border-white/10 py-10 overflow-hidden relative">
+                        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
+                        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
+
+                        <div className="flex gap-16 animate-marquee whitespace-nowrap">
+                            {[...stacks, ...stacks, ...stacks].map((tech, i) => (
+                                <span key={i} className="text-4xl md:text-6xl font-black uppercase text-white/5 opacity-50 hover:opacity-100 hover:text-white transition-all duration-300">
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Timeline */}
